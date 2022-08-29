@@ -1,31 +1,36 @@
-# pm4py
-pm4py is a python library that supports (state-of-the-art) process mining algorithms in python. It is completely open source and intended to be used in both academia and industry projects.
-pm4py is a product of the Fraunhofer Institute for Applied Information Technology.
 
-## Documentation / API
-The documentation about pm4py is offered at http://www.pm4py.org/
+# Privacy-Preserving Process Mining with PM4Py
+To make privacy-preserving process mining more accessible, we integrated state-of-the-art differential privacy algorithms in *PM4Py*, the leading open source process mining platform written in *Python*. We provide the first integration of such anonymization techniques into a general process mining toolkit, and therefore making the respective algorithms more accessible to process mining experts and data scientists. To anonymize the control-flow of an event log, we integrated the *SaCoFa* algorithm and the *Laplacian* mechanism. To anonymize contextual information, we integrated the *PRIPEL* framework. *PM4Py* is a product of the *Fraunhofer Institute for Applied Information Technology*.
+
+## Documentation
+
+The documentation about our privacy preserving algorithms is offered in our demo abstract InserLinkToTheDemoAbstract and in our screencast InserLinkToTheScreencast
+
+The documentation about *PM4Py* is offered at http://www.pm4py.org/
 
 ## First Example
-A very simple example, to whet your appetite:
 
 ```python
 import pm4py
-
-log = pm4py.read_xes('<path-to-xes-log-file.xes>')
-
-net, initial_marking, final_marking = pm4py.discover_petri_net_inductive(log)
-
-pm4py.view_petri_net(pnet, initial_marking, final_marking, format="svg")
+from pm4py.algo.anonymization.trace_variant_query import algorithm as trace_variant_query
+from pm4py.algo.anonymization.pripel import algorithm as pripel
+log = pm4py.read_xes("logName.xes")
+epsilon = 0.01
+sacofa_result = trace_variant_query.apply(log=log, variant=trace_variant_query.Variants.SACOFA, 
+                                            parameters={"epsilon": epsilon, "k": 15, "p": 20})
+anonymizedLog = pripel.apply(log=log, trace_variant_query=sacofa_result, epsilon=epsilon)
 ```
 
 ## Installation
-pm4py can be installed on Python 3.7.x / 3.8.x / 3.9.x / 3.10.x by doing:
+
+When our work has been integrated it into the official PM4Py libary it can be used on Python 3.7.x / 3.8.x / 3.9.x / 3.10.x by invoking:
 ```bash
 pip install -U pm4py
 ```
 
-## Release Notes
-To track the incremental updates, we offer a *CHANGELOG* file.
+Now our work can be used by simply downloading this repository.
+## Citing our work
+....
 
 ## Citing pm4py
 Please cite pm4py as follows:
