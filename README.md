@@ -23,7 +23,7 @@ anonymizedLog = pripel.apply(log=log, trace_variant_query=sacofa_result, epsilon
 
 ## Installation
 
-When our work has been integrated it into the official PM4Py libary it can be used on Python 3.7.x / 3.8.x / 3.9.x / 3.10.x by invoking:
+When our work is aviabil in the offical PM4Py libary it can be used on Python 3.7.x / 3.8.x / 3.9.x / 3.10.x by invoking:
 ```bash
 pip install -U pm4py
 ```
