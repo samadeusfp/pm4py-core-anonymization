@@ -4,9 +4,9 @@ To make privacy-preserving process mining more accessible, we integrated state-o
 
 ## Documentation
 
-The documentation about our privacy preserving algorithms is offered in our demo abstract InserLinkToTheDemoAbstract and in our screencast InserLinkToTheScreencast
+The documentation about our privacy preserving algorithms is offered in our demo abstract InserLinkToTheDemoAbstract and in our screencast https://youtu.be/BRLMG_Bvdbs .
 
-The documentation about *PM4Py* is offered at http://www.pm4py.org/
+The documentation about *PM4Py* is offered at http://www.pm4py.org/ .
 
 ## First Example
 
